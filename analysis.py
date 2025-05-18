@@ -32,7 +32,6 @@ plt.xticks(fontsize=7.5)
 plt.xlabel('Player')
 plt.ylabel('Yellow Cards')
 plt.title('Top 5 Carded Players')
-plt.savefig('yellow_cards.png')
 plt.show()
 
 ## stacked bar chart showing distribution of G+As
@@ -43,7 +42,7 @@ top5 = df.nlargest(5, 'total')
 x = np.arange(len(top5['Player']))
 plt.bar(x, top5['Ast'], label='Assists')
 plt.bar(x, top5['Gls'], bottom=top5['Ast'], label='Goals')
-
+# plotting stacked bar chart
 plt.xticks(x, top5['Player'])
 plt.xlabel('Player')
 plt.ylabel('Goals and Assists')
