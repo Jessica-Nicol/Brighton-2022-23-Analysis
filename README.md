@@ -1,7 +1,7 @@
 # Brighton 2022/23 Player Analysis
 ### This project analyses player data from Brighton & Hove Albion's 2022/23 Premier League season
 ## The Dataset
-The dataset used for this project can be found in the [standard_stats.csv](standard_stats.csv) file, each row represents a player and their corresponding statistics across the season.
+The dataset used for this project can be found in the [standard_stats.csv](data/standard_stats.csv) file, each row represents a player and their corresponding statistics across the season.
 
 The data used has been taken from [https://fbref.com](https://fbref.com).
 ## Potential Uses of this Analysis
