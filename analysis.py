@@ -29,6 +29,9 @@ top5 = df.head(5)
 # plotting bar chart
 plt.bar(top5['Player'], top5['CrdY'], color='gold')
 plt.xticks(fontsize=7.5)
+plt.xlabel('Player')
+plt.ylabel('Yellow Cards')
+plt.title('Top 5 Carded Players')
 plt.savefig('yellow_cards.png')
 plt.show()
 
