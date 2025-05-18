@@ -18,6 +18,15 @@ plt.grid(True)
 # label for the equal line through grid
 plt.axline((0, 0), slope=1, linestyle='--', color='gray', label='xG = Goals')
 plt.legend()
-
 plt.show()
 
+## bar chart showing top 5 most carded players in the season
+# sorting players by most number of cards
+df = df.sort_values(by='CrdY', ascending=False)
+# picking the top 5
+top5 = df.head(5)
+# plotting bar chart
+plt.bar(top5['Player'], top5['CrdY'], color='gold')
+plt.xticks(fontsize=7.5)
+plt.savefig('yellow_cards.png')
+plt.show()
