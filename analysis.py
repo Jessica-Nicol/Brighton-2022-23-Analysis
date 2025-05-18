@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 
 df = pd.read_csv('data/standard_stats.csv')
 
@@ -29,4 +30,21 @@ top5 = df.head(5)
 plt.bar(top5['Player'], top5['CrdY'], color='gold')
 plt.xticks(fontsize=7.5)
 plt.savefig('yellow_cards.png')
+plt.show()
+
+## stacked bar chart showing distribution of G+As
+# calculating total and getting the top 5 players
+df['total'] = df['Gls']+df['Ast']
+top5 = df.nlargest(5, 'total')
+# plotting bars
+x = np.arange(len(top5['Player']))
+plt.bar(x, top5['Ast'], label='Assists')
+plt.bar(x, top5['Gls'], bottom=top5['Ast'], label='Goals')
+
+plt.xticks(x, top5['Player'])
+plt.xlabel('Player')
+plt.ylabel('Goals and Assists')
+plt.title('Assists vs Goals')
+plt.xticks(fontsize=7.5)
+plt.legend()
 plt.show()
